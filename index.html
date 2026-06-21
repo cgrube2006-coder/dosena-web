@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosena – Deine Medikamente. Immer im Blick.</title>
+<meta name="description" content="Dosena erinnert dich zuverlässig an deine Medikamente, dokumentiert Werte und erstellt Arzt-Reports. Datenschutzfreundlich – alles bleibt auf deinem Gerät.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)" fill="#fff"/><rect x="11" y="4" width="2" height="16" transform="rotate(-45 12 12)" fill="#0D9488"/></svg>
+      </span>
+      Dosena
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="link" href="#features">Funktionen</a>
+      <a class="link" href="#how">So geht's</a>
+      <a class="link" href="#preise">Preise</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#download" style="padding:11px 22px;">Jetzt starten</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Dein Gesundheits-Begleiter</span>
+      <h1 class="reveal" data-d="1">Deine Medikamente.<br><span class="accent">Immer im Blick.</span></h1>
+      <p class="lead reveal" data-d="2">Dosena erinnert dich zuverlässig an jede Einnahme, dokumentiert deine Werte und bereitet alles für den Arztbesuch vor – einfach, klar und sicher.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <a class="btn btn-primary" href="#download">Kostenlos starten</a>
+        <a class="btn btn-ghost" href="#features">Funktionen ansehen</a>
+      </div>
+      <div class="hero-trust reveal" data-d="4">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg> Daten bleiben auf dem Gerät</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Kein Tracking, keine Werbung</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> DSGVO-konform</span>
+      </div>
+    </div>
+
+    <!-- Phone Mockup -->
+    <div class="phone-stage reveal" data-d="2">
+      <div class="chip chip-1">
+        <span class="dot" style="background:var(--mint);color:var(--teal-700)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></span>
+        <div>Erinnerung · 08:00</div>
+      </div>
+      <div class="chip chip-2">
+        <span class="dot" style="background:rgba(31,174,99,.15);color:#1a8a52"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div>Genommen ✓</div>
+      </div>
+      <div class="chip chip-3">
+        <span class="dot" style="background:rgba(226,160,63,.16);color:#b5781f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 7-7"/></svg></span>
+        <div>Blutdruck stabil</div>
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="s-top">
+            <div><div class="s-greet">Guten Morgen</div><div class="s-date">Freitag, 20. Juni</div></div>
+            <div class="s-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          </div>
+          <div class="s-hero">
+            <div class="k">HEUTE</div>
+            <div class="v">2 von 4 genommen</div>
+            <div class="s-bar"><i></i></div>
+          </div>
+          <div class="s-tiles">
+            <div class="s-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div class="t">Verlauf</div><div class="d">Letzte 30 Tage</div></div>
+            <div class="s-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg></div><div class="t">Werte</div><div class="d">Blutdruck, Gewicht</div></div>
+            <div class="s-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/></svg></div><div class="t">Medikamente</div><div class="d">3 aktiv</div></div>
+            <div class="s-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg></div><div class="t">Notfallpass</div><div class="d">Wichtige Infos</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TRUST ============ -->
+<section class="trust">
+  <div class="wrap">
+    <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg> 100 % lokal gespeichert</b>
+    <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg> DSGVO-konform</b>
+    <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg> Zuverlässige Erinnerungen</b>
+    <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H5.2L4 17.5z"/></svg> Auf Deutsch entwickelt</b>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section" style="padding-bottom:40px;">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num"><span data-count="50">0</span>%</div><div class="lbl">vergessen ihre Medikamente regelmäßig*</div></div>
+      <div class="stat reveal" data-d="1"><div class="num">0 €</div><div class="lbl">Grundnutzung – Kernfunktionen gratis</div></div>
+      <div class="stat reveal" data-d="2"><div class="num"><span data-count="5">0</span>+</div><div class="lbl">Bereiche von Plan bis Arzt-Report</div></div>
+      <div class="stat reveal" data-d="3"><div class="num">2</div><div class="lbl">Plattformen – Android &amp; iOS</div></div>
+    </div>
+    <p class="reveal" style="text-align:center;color:var(--ink-soft);font-size:12px;margin-top:16px;">*Therapietreue ist eine bekannte Herausforderung – Dosena hilft, dranzubleiben.</p>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Funktionen</span>
+      <h2 class="reveal" data-d="1">Alles für deine Therapie – an einem Ort</h2>
+      <p class="lead reveal" data-d="2">Von der täglichen Erinnerung bis zum fertigen Bericht für deinen Arzt.</p>
+    </div>
+    <div class="features">
+      <div class="feature reveal">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></div>
+        <h3>Smarte Erinnerungen</h3>
+        <p>Pünktliche Hinweise zur Einnahme – auf Wunsch wie ein Wecker im Vollbild. Mit einem Tippen bestätigt.</p>
+      </div>
+      <div class="feature reveal" data-d="1">
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/></svg></div>
+        <h3>Medikamentenplan</h3>
+        <p>Dosis, Uhrzeiten, Wochentage und Bestand – mit Autocomplete für gängige Präparate.</p>
+      </div>
+      <div class="feature reveal" data-d="2">
+        <span class="premium">Premium</span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg></div>
+        <h3>Werte-Tracking</h3>
+        <p>Blutdruck, Blutzucker, Gewicht &amp; mehr – mit übersichtlichen Verlaufs-Graphen.</p>
+      </div>
+      <div class="feature reveal">
+        <span class="premium">Premium</span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Verlauf &amp; Treue</h3>
+        <p>Kalender-Übersicht zeigt auf einen Blick, wie zuverlässig du deine Einnahmen schaffst.</p>
+      </div>
+      <div class="feature reveal" data-d="1">
+        <span class="premium">Premium</span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v4a1 1 0 001 1h4"/><path d="M5 3h9l5 5v13H5z"/><path d="M9 13h6M9 17h6"/></svg></div>
+        <h3>Arzt-Report (PDF)</h3>
+        <p>Eine saubere Zusammenfassung für den Arztbesuch – Plan, Treue und Werte als PDF.</p>
+      </div>
+      <div class="feature reveal" data-d="2">
+        <span class="premium">Premium</span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Notfallpass &amp; Profile</h3>
+        <p>Wichtige Infos für den Ernstfall – und mehrere Profile, z. B. für Angehörige.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section class="section" id="how" style="background:var(--mint-2);border-block:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal">So einfach geht's</span>
+      <h2 class="reveal" data-d="1">In drei Schritten startklar</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="circle">1</div>
+        <h3>Medikamente anlegen</h3>
+        <p>Trage deine Präparate mit Dosis und Uhrzeiten ein – dank Autocomplete in Sekunden.</p>
+      </div>
+      <div class="step reveal" data-d="1">
+        <div class="circle">2</div>
+        <h3>Erinnern lassen</h3>
+        <p>Dosena meldet sich pünktlich. Du bestätigst die Einnahme mit einem Tippen.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <div class="circle">3</div>
+        <h3>Überblick behalten</h3>
+        <p>Verlauf, Werte und Arzt-Report zeigen dir und deinem Arzt den Fortschritt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE ============ -->
+<section class="section">
+  <div class="wrap showcase">
+
+    <div class="show-row">
+      <div class="show-text reveal">
+        <span class="eyebrow">Dein Tag</span>
+        <h3>Heute auf einen Blick</h3>
+        <p>Alle anstehenden Einnahmen übersichtlich an einem Ort – abgehakt ist abgehakt.</p>
+        <ul class="show-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Fortschrittsanzeige für den Tag</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Genommen, verschoben oder ausgelassen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Automatischer Bestands-Abzug</li>
+        </ul>
+      </div>
+      <div class="show-visual reveal" data-d="1">
+        <div class="mini">
+          <h4>HEUTE · 20. JUNI</h4>
+          <div class="mini-row"><span class="pill" style="background:var(--teal)"></span><div class="txt"><b>Ramipril 5 mg</b><small>08:00 · Dosis 1</small></div><span class="badge badge-ok">Genommen</span></div>
+          <div class="mini-row"><span class="pill" style="background:#4C8DF6"></span><div class="txt"><b>Metformin</b><small>12:00 · zum Essen</small></div><span class="badge badge-warn">Offen</span></div>
+          <div class="mini-row"><span class="pill" style="background:#E0567E"></span><div class="txt"><b>Vitamin D</b><small>20:00 · Dosis 1</small></div><span class="badge badge-warn">Offen</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-row rev">
+      <div class="show-text reveal">
+        <span class="eyebrow">Werte-Tracking</span>
+        <h3>Werte verstehen, Trends erkennen</h3>
+        <p>Erfasse Blutdruck, Gewicht und mehr – schöne Graphen zeigen dir die Entwicklung über die Zeit.</p>
+        <ul class="show-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Mehrere Messwert-Typen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Verlaufs-Graphen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Fließt direkt in den Arzt-Report</li>
+        </ul>
+      </div>
+      <div class="show-visual reveal" data-d="1">
+        <div class="mini">
+          <h4>BLUTDRUCK · LETZTE WOCHE</h4>
+          <div class="bars">
+            <div class="b" style="height:55%"></div><div class="b" style="height:70%"></div>
+            <div class="b" style="height:48%"></div><div class="b" style="height:80%"></div>
+            <div class="b" style="height:62%"></div><div class="b" style="height:75%"></div>
+            <div class="b" style="height:58%"></div>
+          </div>
+          <div class="mini-row" style="border:0;padding-top:14px;"><div class="txt"><b>128 / 82 mmHg</b><small>Aktuellster Wert</small></div><span class="badge badge-ok">stabil</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-row">
+      <div class="show-text reveal">
+        <span class="eyebrow">Verlauf</span>
+        <h3>Therapietreue sichtbar gemacht</h3>
+        <p>Der Kalender färbt jeden Tag nach deiner Einnahme – grün für alles geschafft, ein Blick genügt.</p>
+        <ul class="show-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Monatsübersicht im Kalender</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Tages-Details auf Tippen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Motiviert, dranzubleiben</li>
+        </ul>
+      </div>
+      <div class="show-visual reveal" data-d="1">
+        <div class="mini">
+          <h4>JUNI</h4>
+          <div class="cal">
+            <i class="g"></i><i class="g"></i><i class="o"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="o"></i>
+            <i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="o"></i><i class="g"></i><i class="g"></i>
+            <i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="o"></i><i class="g"></i>
+            <i class="g"></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="mini-row" style="border:0;padding-top:14px;"><div class="txt"><b>93 % Therapietreue</b><small>im laufenden Monat</small></div><span class="badge badge-ok">stark</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="preise" style="background:var(--mint-2);border-block:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Preise</span>
+      <h2 class="reveal" data-d="1">Fair &amp; transparent</h2>
+      <p class="lead reveal" data-d="2">Die Kernfunktionen sind dauerhaft kostenlos. Premium schaltet alles frei.</p>
+    </div>
+    <div class="pricing">
+      <div class="price-card reveal">
+        <h3>Kostenlos</h3>
+        <p class="sub">Der solide Start in deine Therapie</p>
+        <div class="amount">0 €</div>
+        <div class="alt">dauerhaft gratis</div>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Medikamentenplan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Smarte Erinnerungen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Heute-Übersicht</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Datensicherung &amp; Export</li>
+        </ul>
+        <a class="btn btn-ghost" href="#download">Kostenlos starten</a>
+      </div>
+      <div class="price-card pro reveal" data-d="1">
+        <h3>Premium</h3>
+        <p class="sub">Alle Funktionen, voller Überblick</p>
+        <div class="amount">1,99 €<span> / Monat</span></div>
+        <div class="alt">oder 14,99 € / Jahr – über 35 % sparen</div>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Alles aus Kostenlos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Verlauf &amp; Werte-Tracking</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Arzt-Report als PDF</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Notfallpass, Vorrat &amp; Profile</li>
+        </ul>
+        <a class="btn btn-primary" href="#download">Premium holen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Häufige Fragen</span>
+      <h2 class="reveal" data-d="1">Gut zu wissen</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>Wo werden meine Daten gespeichert?<span class="pl"></span></summary><p>Alle deine Gesundheitsdaten bleiben lokal auf deinem Gerät. Es gibt keinen Server und kein Konto – wir sehen deine Daten nicht. Du kannst sie jederzeit exportieren oder löschen.</p></details>
+      <details class="reveal"><summary>Ist Dosena ein Medizinprodukt?<span class="pl"></span></summary><p>Nein. Dosena organisiert und dokumentiert deine Therapie, stellt aber keine Diagnose und gibt keine Dosier- oder Therapieempfehlungen. Die App ersetzt keine ärztliche Beratung.</p></details>
+      <details class="reveal"><summary>Was kostet die App?<span class="pl"></span></summary><p>Die Kernfunktionen – Medikamentenplan, Erinnerungen und Heute-Übersicht – sind dauerhaft kostenlos. Premium (Verlauf, Werte, Arzt-Report, Notfallpass, Profile) gibt es für 1,99 €/Monat oder 14,99 €/Jahr.</p></details>
+      <details class="reveal"><summary>Funktionieren die Erinnerungen zuverlässig?<span class="pl"></span></summary><p>Ja. Die Erinnerungen werden als exakte, lokale Benachrichtigungen geplant – auf Android sogar als Vollbild-Hinweis wie bei einem Wecker, auch über dem Sperrbildschirm.</p></details>
+      <details class="reveal"><summary>Gibt es die App für iPhone und Android?<span class="pl"></span></summary><p>Dosena wird für beide Plattformen entwickelt – nativ für Android und iOS, mit demselben Funktionsumfang.</p></details>
+      <details class="reveal"><summary>Kann ich Angehörige mitverwalten?<span class="pl"></span></summary><p>Ja, mit Premium kannst du mehrere Profile anlegen – ideal, um z. B. die Medikamente von Eltern oder Partner im Blick zu behalten. Erinnerungen laufen für alle Profile.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD / CTA ============ -->
+<section class="section" id="download">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2>Bleib deiner Gesundheit treu.</h2>
+      <p>Starte kostenlos mit Dosena – und behalte deine Medikamente ab heute mühelos im Blick.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;">
+        <a class="store-badge" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5c0-.4.2-.7.5-.9l11 9.4-11 9.4c-.3-.2-.5-.5-.5-.9zM16.8 14.3l-2.4-2 2.4-2 2.9 1.7c.6.3.6 1.1 0 1.4l-2.9 1.9zM5.4 2.2l9.3 5.4-2.2 2.2L5.4 2.2zm0 19.6l7.1-7.6 2.2 2.2-9.3 5.4z"/></svg><span class="sb"><small>Jetzt bei</small><b>Google Play</b></span></a>
+        <a class="store-badge" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 1.6c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.3 2.8-1.4zM19.3 17c-.5 1.2-.8 1.7-1.4 2.7-.9 1.4-2.2 3.1-3.8 3.1-1.4 0-1.8-.9-3.7-.9s-2.3.9-3.7.9c-1.6 0-2.8-1.6-3.7-3C-.7 15.6-.2 9.6 3 9.4c1.3-.1 2.2.8 3.1.8.9 0 2.3-1 3.9-.8.7 0 2.5.3 3.7 2-3.2 1.8-2.7 6.1.6 5.6z"/></svg><span class="sb"><small>Laden im</small><b>App Store</b></span></a>
+      </div>
+      <p style="margin-top:18px;font-size:13px;opacity:.8;">In Kürze verfügbar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)" fill="#fff"/><rect x="11" y="4" width="2" height="16" transform="rotate(-45 12 12)" fill="#0D9488"/></svg></span>
+          Dosena
+        </a>
+        <p class="fdesc">Dein freundlicher Begleiter für Medikamente und Gesundheit – einfach, klar und datenschutzfreundlich.</p>
+      </div>
+      <div>
+        <h4>Produkt</h4>
+        <ul>
+          <li><a href="#features">Funktionen</a></li>
+          <li><a href="#preise">Preise</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Dosena</span>
+      <span>Mit Sorgfalt entwickelt in Deutschland</span>
+    </div>
+    <p class="footer-note">Dosena organisiert und dokumentiert deine Therapie. Die App stellt keine Diagnose, gibt keine Dosier- oder Therapieempfehlungen und ersetzt keine ärztliche Beratung.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

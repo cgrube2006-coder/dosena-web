@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – Dosena</title>
+<meta name="description" content="Impressum der App Dosena.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)" fill="#fff"/><rect x="11" y="4" width="2" height="16" transform="rotate(-45 12 12)" fill="#0D9488"/></svg></span>
+      Dosena
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="link" href="index.html#features">Funktionen</a>
+      <a class="link" href="index.html#preise">Preise</a>
+      <a class="link" href="index.html#faq">FAQ</a>
+      <a class="btn btn-primary" href="index.html#download" style="padding:11px 22px;">Jetzt starten</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="wrap">
+    <h1>Impressum</h1>
+    <p class="updated">Angaben gemäß § 5 DDG</p>
+    <div class="legal-card">
+      <h2>Anbieter</h2>
+      <p>Cedric Grube<br>Anton-Nagel-Straße 10<br>85368 Moosburg a. d. Isar<br>Deutschland</p>
+
+      <h2>Kontakt</h2>
+      <p>E-Mail: dosenahelper@gmail.com<br>Telefon: +49 173 3193968</p>
+
+      <h2>Umsatzsteuer</h2>
+      <p>Kleinunternehmer gemäß § 19 UStG – es wird keine Umsatzsteuer ausgewiesen.</p>
+
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>Cedric Grube, Anschrift wie oben</p>
+
+      <h2>Haftungshinweis</h2>
+      <p>Dosena organisiert und dokumentiert deine Therapie. Die App stellt keine Diagnose, gibt keine Dosier- oder Therapieempfehlungen und ersetzt keine ärztliche Beratung.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border:0;padding-top:0;">
+      <span>© <span id="year">2026</span> Dosena</span>
+      <span><a href="index.html" style="color:#cfe0db;">Zur Startseite</a> · <a href="datenschutz.html" style="color:#cfe0db;">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t&&t.addEventListener('click',()=>l.classList.toggle('open'));
+</script>
+</body>
+</html>
