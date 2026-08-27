@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosena laden</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Dosena für iPhone und Android laden.">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .sl-wrap { min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+             justify-content: center; text-align: center; padding: 32px 20px; gap: 26px; }
+  .sl-mark { width: 76px; height: 76px; border-radius: 22px; background: var(--teal);
+             display: grid; place-items: center; box-shadow: var(--shadow); }
+  .sl-mark svg { width: 42px; height: 42px; }
+  .sl-wrap h1 { font-family: var(--font-display); font-size: clamp(28px, 6vw, 40px);
+                font-weight: 600; line-height: 1.15; max-width: 16ch; }
+  .sl-wrap p.sl-lead { font-size: 19px; color: var(--ink-soft); max-width: 34ch; }
+  .sl-badges { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 340px; }
+  .sl-badges .store-badge { justify-content: center; padding: 17px 22px; border-radius: 16px; }
+  .sl-badges .store-badge .sb small { font-size: 12px; }
+  .sl-badges .store-badge .sb b { font-size: 18px; }
+  .sl-note { font-size: 14px; color: var(--ink-soft); }
+  .sl-note a { text-decoration: underline; }
+  .sl-spinner { width: 28px; height: 28px; border: 3px solid var(--mint);
+                border-top-color: var(--teal); border-radius: 50%;
+                animation: sl-spin .8s linear infinite; }
+  @keyframes sl-spin { to { transform: rotate(360deg); } }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<main class="sl-wrap">
+  <div class="sl-mark">
+    <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)" fill="#fff"/><rect x="11" y="4" width="2" height="16" transform="rotate(-45 12 12)" fill="#0D9488"/></svg>
+  </div>
+
+  <!-- Wird angezeigt, während weitergeleitet wird -->
+  <div id="slRedirect" hidden>
+    <h1>Einen Moment …</h1>
+    <p class="sl-lead">Wir bringen dich direkt zum Download.</p>
+    <div class="sl-spinner" style="margin:22px auto 0;"></div>
+  </div>
+
+  <!-- iOS erkannt, aber noch keine App-Store-URL hinterlegt -->
+  <div id="slIosPending" hidden>
+    <h1>Dosena für iPhone</h1>
+    <p class="sl-lead" style="margin:14px auto 0;">Suche im App Store nach <strong>Dosena</strong> – dort findest du die App.</p>
+  </div>
+
+  <!-- Fallback: Desktop, unbekanntes Gerät oder kein JavaScript -->
+  <div id="slChoice">
+    <h1>Dosena laden</h1>
+    <p class="sl-lead" style="margin:14px auto 0;">Deine Medikamente. Immer im Blick.</p>
+  </div>
+
+  <div class="sl-badges" id="slBadges">
+    <a class="store-badge" id="slPlay" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5c0-.4.2-.7.5-.9l11 9.4-11 9.4c-.3-.2-.5-.5-.5-.9zM16.8 14.3l-2.4-2 2.4-2 2.9 1.7c.6.3.6 1.1 0 1.4l-2.9 1.9zM5.4 2.2l9.3 5.4-2.2 2.2L5.4 2.2zm0 19.6l7.1-7.6 2.2 2.2-9.3 5.4z"/></svg>
+      <span class="sb"><small>Jetzt bei</small><b>Google Play</b></span>
+    </a>
+    <a class="store-badge" id="slApple" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 1.6c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.3 2.8-1.4zM19.3 17c-.5 1.2-.8 1.7-1.4 2.7-.9 1.4-2.2 3.1-3.8 3.1-1.4 0-1.8-.9-3.7-.9s-2.3.9-3.7.9c-1.6 0-2.8-1.6-3.7-3C-.7 15.6-.2 9.6 3 9.4c1.3-.1 2.2.8 3.1.8.9 0 2.3-1 3.9-.8.7 0 2.5.3 3.7 2-3.2 1.8-2.7 6.1.6 5.6z"/></svg>
+      <span class="sb"><small>Laden im</small><b>App Store</b></span>
+    </a>
+  </div>
+
+  <p class="sl-note">Kernfunktionen dauerhaft kostenlos · <a href="../index.html">Mehr über Dosena</a></p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ------------------------------------------------------------------
+     HIER DIE STORE-LINKS PFLEGEN
+     ------------------------------------------------------------------ */
+  var PLAY_ID    = "com.dosena.app";
+  var PLAY_URL   = "https://play.google.com/store/apps/details?id=" + PLAY_ID;
+
+  var APPLE_URL  = "https://apps.apple.com/de/app/dosena-tabletten-erinnerung/id6783053211";
+
+  /* ------------------------------------------------------------------
+     UTM-Parameter aus der URL übernehmen
+     ------------------------------------------------------------------ */
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  var utm = new URLSearchParams();
+  utmKeys.forEach(function (k) {
+    var v = params.get(k);
+    if (v) utm.set(k, v);
+  });
+  var hasUtm = utm.toString().length > 0;
+
+  /* Google Play erwartet die UTM-Daten gebündelt im referrer-Parameter.
+     Nur so tauchen sie in der Play Console unter Akquisition auf. */
+  function playUrl() {
+    if (!hasUtm) return PLAY_URL;
+    return PLAY_URL + "&referrer=" + encodeURIComponent(utm.toString());
+  }
+
+  /* Apple nimmt Kampagnen-Token als ct / pt entgegen. */
+  function appleUrl() {
+    if (!APPLE_URL) return "";
+    if (!hasUtm) return APPLE_URL;
+    var sep = APPLE_URL.indexOf("?") === -1 ? "?" : "&";
+    var ct = utm.get("utm_campaign") || utm.get("utm_source") || "web";
+    return APPLE_URL + sep + "ct=" + encodeURIComponent(ct) + "&mt=8";
+  }
+
+  /* ------------------------------------------------------------------
+     Geräte-Erkennung
+     ------------------------------------------------------------------ */
+  function detect() {
+    var ua = navigator.userAgent || "";
+
+    if (/android/i.test(ua)) return "android";
+    if (/iPhone|iPod/i.test(ua)) return "ios";
+    if (/iPad/i.test(ua)) return "ios";
+
+    /* iPadOS 13+ meldet sich als Macintosh – über Touch-Punkte erkennbar. */
+    if (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return "ios";
+
+    return "desktop";
+  }
+
+  /* ------------------------------------------------------------------
+     Buttons verdrahten
+     ------------------------------------------------------------------ */
+  var play  = document.getElementById("slPlay");
+  var apple = document.getElementById("slApple");
+
+  play.href = playUrl();
+
+  var aUrl = appleUrl();
+  if (aUrl) {
+    apple.href = aUrl;
+  } else {
+    apple.hidden = true;
+  }
+
+  /* ------------------------------------------------------------------
+     Weiterleiten
+     ------------------------------------------------------------------ */
+  var device = detect();
+  var target = "";
+
+  if (device === "android") target = playUrl();
+  else if (device === "ios") target = aUrl;
+
+  var choice = document.getElementById("slChoice");
+  var badges = document.getElementById("slBadges");
+
+  if (target) {
+    choice.hidden = true;
+    badges.hidden = true;
+    document.getElementById("slRedirect").hidden = false;
+    /* replace statt assign: der Zurück-Button springt nicht in eine Schleife. */
+    window.location.replace(target);
+    return;
+  }
+
+  /* iPhone/iPad erkannt, aber APPLE_URL ist noch nicht gepflegt:
+     keinen Play-Button anbieten, der hier nichts nützt. */
+  if (device === "ios" && !aUrl) {
+    choice.hidden = true;
+    badges.hidden = true;
+    document.getElementById("slIosPending").hidden = false;
+  }
+})();
+</script>
+
+</body>
+</html>
