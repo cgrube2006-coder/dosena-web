@@ -1,46 +1,51 @@
-# Dosena – Website (Datenschutz & Impressum)
+# Dosena – Website
 
-Diese Seite wird **öffentlich** gehostet, damit die App-Stores die Datenschutz-URL
-prüfen können. Empfehlung: **GitHub Pages** (kostenlos).
+Stand: **14.09.2026**. Statische Website im bestehenden Repository
+[dosena-web](https://github.com/cgrube2006-coder/dosena-web), Branch `main`.
+Letzter Website-Code-Commit: `bffafdb` vom 27.08.2026.
+Domain laut `CNAME`: **dosena.de**. Hosting/DNS wurden heute nicht neu geprüft.
 
-## Schritt 1 – Platzhalter ausfüllen (Pflicht)
-In `datenschutz.html` und `impressum.html` alle `[...]`-Platzhalter ersetzen:
-- `[DEIN NAME]`, `[STRASSE NR.]`, `[PLZ ORT]`, `[DEINE E-MAIL]`, `[DATUM EINTRAGEN]`
+## Vorhanden
 
-> Hinweis: In Deutschland sind Impressum + Datenschutzerklärung Pflicht, inkl.
-> ladungsfähiger Anschrift. Wenn du deine Privatadresse nicht öffentlich zeigen willst,
-> ist das ein guter Zeitpunkt, dich kurz zu informieren (z. B. Zustelldienst-Adresse).
-> Diese Vorlage ist ein solider Start, aber keine Rechtsberatung.
+- `index.html`, `styles.css`, `app.js`: Landingpage.
+- `datenschutz.html`, `impressum.html`: vorhandene rechtliche Seiten.
+- `app/index.html`: Smart Link für Store-Weiterleitung.
+- `CNAME`: bestehende eigene Domain; nicht bei einem Dokumentationsupdate ersetzen.
 
-## Schritt 2 – Öffentliches Repo anlegen
-1. Auf github.com → **New repository**
-2. Name z. B. `medibegleiter-web`, **Public** (wichtig!), ohne README
-3. Erstellen
+Die früheren README-Schritte „neues Repo anlegen“ und „erste Dateien hochladen“
+waren Erstsetup-Anweisungen und sind für dieses bestehende Projekt nicht mehr aktuell.
 
-## Schritt 3 – Dateien hochladen
-Am einfachsten über die Weboberfläche: im neuen Repo **„Add file → Upload files"**,
-dann **alle** Dateien aus diesem `website/`-Ordner hochladen und committen:
-- `index.html`, `datenschutz.html`, `impressum.html`
-- `styles.css`, `app.js`  ← wichtig, sonst fehlt das Design!
+## Smart Link
 
-(Oder per Terminal: in diesem `website/`-Ordner `git init`, committen,
-`git remote add origin <URL>`, `git push`.)
+[dosena.de/app](https://dosena.de/app) erkennt im Quellcode Android, iOS/iPadOS oder
+Desktop. Mobil wird der passende Store verwendet, am Desktop bleiben Store-Links wählbar.
 
-> Tipp zum Vorschauen: Du kannst `index.html` auch einfach lokal per Doppelklick im
-> Browser öffnen, um die Seite vorab anzusehen.
+- Android: [Google Play, com.dosena.app](https://play.google.com/store/apps/details?id=com.dosena.app).
+- iOS: [App Store, ID 6783053211](https://apps.apple.com/de/app/dosena-tabletten-erinnerung/id6783053211).
+- Übernommene Parameter: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`.
+- Android bündelt UTM-Werte im `referrer`; iOS setzt `ct` aus Kampagne/Quelle und `mt=8`.
 
-## Schritt 4 – GitHub Pages aktivieren
-1. Im Repo: **Settings → Pages**
-2. Source: **Deploy from a branch**, Branch: **main**, Ordner: **/(root)** → Save
-3. Nach 1–2 Minuten erscheint oben die URL, z. B.
-   `https://cgrube2006-coder.github.io/medibegleiter-web/`
+Diese Weitergabe beweist **keine vollständige Installations- oder Kaufattribution**.
+Insbesondere unbekannte Quellen in Google Play nicht automatisch Meta zuordnen.
 
-## Schritt 5 – URLs notieren (für die Stores & die App)
-- Datenschutz: `https://<dein-pages-link>/datenschutz.html`
-- Impressum:  `https://<dein-pages-link>/impressum.html`
+## Übergabe und Pflege
 
-Diese Datenschutz-URL trägst du später ein:
-- **Google Play Console** → App-Inhalte → Datenschutzerklärung
-- **App Store Connect** → App-Datenschutz → Datenschutzrichtlinien-URL
+Die App-Quellen liegen separat:
+[Android](https://github.com/cgrube2006-coder/MedizinAppAndroid) und
+[iOS](https://github.com/cgrube2006-coder/MedizinAppIOS).
 
-Sag mir die Datenschutz-URL – dann verlinke ich sie auch direkt in der App.
+Gemeinsame Entscheidungen und die datierte Marketing-Auswertung sind im
+[Projektstand](https://github.com/cgrube2006-coder/MedizinAppAndroid/blob/main/docs/projektstand.md)
+und [Marketing-Dokument](https://github.com/cgrube2006-coder/MedizinAppAndroid/blob/main/docs/marketing.md)
+des Android-Repositories dokumentiert. Zugriff auf diese Repositories kann erforderlich sein.
+Keine internen Kontozugangsdaten oder vertraulichen Kampagnendaten in dieses öffentliche Web-Repo kopieren.
+
+## Bei späteren Website-Änderungen
+
+- Nur den beauftragten Inhalt ändern; Domain, Rechtstexte und Store-Ziele nicht beiläufig ersetzen.
+- Landingpage mobil/desktop, Store-Links und `/app` mit/ohne UTM prüfen.
+- Vor einer Hosting-Änderung die bestehende Konfiguration in GitHub Pages prüfen.
+- Quellcode-Push und tatsächliches Deployment getrennt verifizieren.
+- README um Änderung, Prüfdatum, Ergebnis und offene Punkte ergänzen.
+
+Diese Pflege ändert nur Dokumentation, keine Website-Funktion und keine Hosting-Einstellung.
