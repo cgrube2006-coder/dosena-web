@@ -49,3 +49,19 @@ Keine internen Kontozugangsdaten oder vertraulichen Kampagnendaten in dieses öf
 - README um Änderung, Prüfdatum, Ergebnis und offene Punkte ergänzen.
 
 Diese Pflege ändert nur Dokumentation, keine Website-Funktion und keine Hosting-Einstellung.
+
+## Änderung 01.10.2026: ehrliche Erinnerungstexte
+
+Grund: Eine Compliance-Prüfung fand absolute Aussagen zur Zuverlässigkeit der
+Erinnerungen und einen für iOS unzutreffenden Vollbild-Hinweis.
+
+- `index.html`: Meta-Description, Hero-Lead, Badge „Erinnerungen zur festen Uhrzeit“,
+  Funktions- und Schritttexte ohne „zuverlässig“/„pünktlich“, Vollbild als Android-Funktion
+  gekennzeichnet, FAQ „Wie verlässlich sind die Erinnerungen?“ mit Voraussetzungen.
+- `datenschutz.html`: exakte Alarme als Android-Berechtigung gekennzeichnet.
+- `impressum.html`: Funktionshinweis zur Zustellung im Haftungshinweis.
+
+Geprüft: Textsuche nach „zuverlässig“, „nie wieder“, „jede Einnahme“, „Vollbild“,
+„pünktlich“ (nur noch der gekennzeichnete Android-Vollbild-Satz). Kein JSON-LD/FAQPage-
+Schema und keine og:/twitter:-Tags vorhanden. Kein Browser-Rendering-Test.
+Offen: Merge des PRs und Kontrolle des GitHub-Pages-Deployments.
