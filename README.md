@@ -127,7 +127,8 @@ eine pauschale Selbstzuschreibung ohne Prüfung und daher irreführungsanfällig
   bzw. Google LLC (DPF); Beleglink zum GitHub-IP-Logging; Smart Link: an Apple geht nur der
   Kampagnenname (`ct`), an Google Play alle UTM-Werte (wie in `app/index.html`).
 - `datenschutz.html` Abschnitt 8 heißt jetzt „App-Stores: Abonnement und Bewertungen“ und
-  nennt den Bewertungsdialog (Android Play In-App Review, iOS `requestReview`).
+  nennt den Bewertungsdialog (Android Play In-App Review, iOS `requestReview`) sowie die lokale
+  Abo-Statusprüfung über Play Billing/StoreKit (lit. b); vom compliance-checker gegen den Code geprüft.
 - `index.html`: Hero-Badge „DSGVO-konform“ entfernt („Kein Tracking, keine Werbung“ steht
   dort schon), im Trust-Streifen durch „Kein Tracking, keine Werbung“ ersetzt.
 
