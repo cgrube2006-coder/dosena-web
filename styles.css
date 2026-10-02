@@ -385,7 +385,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .legal h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 8px; }
 .legal .updated { color: var(--ink-soft); font-size: 14px; margin-bottom: 30px; }
 .legal-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-l); padding: clamp(26px, 5vw, 50px); box-shadow: var(--shadow-s); }
-.legal-card h2 { font-size: 22px; color: var(--teal-deep); margin: 30px 0 10px; }
+.legal-card h2 { font-size: 22px; color: var(--teal-deep); margin: 30px 0 10px; scroll-margin-top: 96px; }
 .legal-card h2:first-child { margin-top: 0; }
 .legal-card p, .legal-card li { color: var(--ink-soft); }
 .legal-card p + p { margin-top: 12px; }
