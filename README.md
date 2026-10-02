@@ -165,10 +165,10 @@ PR #4) auf. Mit PR #3 (`fix/gratis-report-texte`) ist im FAQ-Block ein Konflikt 
 Geprüft: compliance-checker (erst Funde K2/K3/E6/E7, dann Nachprüfung: nichts Kritisches oder
 Hohes mehr, mittlere Funde zu „Therapietreue/dranbleiben“ übernommen); Textsuche nach
 „Therapietreue“, „dranzubleiben“, „stabil“, „Trends“, „festen Uhrzeit“ ohne Treffer;
-`<div>`/`<a>` ausgeglichen; Android-Build ohne Tracking-/Crash-SDKs (Gradle-Dateien durchsucht).
+`<div>`/`<a>` ausgeglichen; Android-Build (Gradle-Dateien) und iOS-Projekt (`project.yml`)
+ohne Tracking-/Crash-SDKs.
 Kein Browser-Rendering-Test.
 Offen (niedrig, compliance-checker): „Dein Gesundheits-Begleiter“, „Smarte Erinnerungen“,
 „Verlauf & Treue“/„Plan, Treue und Werte“ (kollidiert mit PR #3), „Der solide Start in deine
 Therapie“, „Werte-Tracking“ neben „Kein Tracking“, „organisiert und dokumentiert deine
-Therapie“ im Disclaimer, PAngV-Hinweis (inkl. MwSt., Abo-Verlängerung) bei den Preisen;
-iOS-Projekt noch auf Tracking-SDKs prüfen, bevor „0 Tracker“ live geht.
+Therapie“ im Disclaimer, PAngV-Hinweis (inkl. MwSt., Abo-Verlängerung) bei den Preisen.
