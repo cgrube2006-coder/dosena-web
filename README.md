@@ -136,3 +136,39 @@ dataprivacyframework.gov/list prüfen. Kein Browser-Rendering-Test.
 Rechtlich offen (compliance-checker): ob das Senden einer E-Mail als „ausdrückliche“
 Einwilligung nach Art. 9 genügt; privates Gmail erlaubt keinen AV-Vertrag (Alternative:
 Postfach unter @dosena.de bei einem EU-Anbieter); konkrete Löschfrist für E-Mails festlegen.
+
+## Änderung 02.10.2026: Landingpage ohne Bewertungs- und Wirkungsaussagen
+
+Grund: Der compliance-checker fand in `index.html` Texte, die eine medizinische Bewertung von
+Messwerten nahelegen (MDR-Abgrenzung), eine Statistik ohne Quelle (HWG § 3, UWG § 5) und
+Aussagen zu Fortschritt bzw. Therapietreue, die die App so nicht misst.
+
+- Mockup: Chip „Blutdruck stabil“ → „Blutdruck eingetragen“ (Puls- statt Trend-Icon), Badges
+  „stabil“ und „stark“ entfernt, „93 % Therapietreue“ → „82 % bestätigt / Einnahmen im laufenden
+  Monat“ (passt jetzt zu den 18 von 22 grünen Kalendertagen).
+- Statistik „50 % vergessen ihre Medikamente regelmäßig*“ samt Fußnote entfernt (keine
+  belastbare Quelle, die WHO-Zahl von 2003 betrifft Therapietreue bei Langzeittherapien);
+  Kachel ersetzt durch „0 – Tracker und Werbung“ (Datenschutzerklärung Abschnitt 9).
+- Texte: „Werte festhalten, Verlauf ansehen“, Diagramme zeigen „deine eingetragenen Werte im
+  Zeitverlauf“, „…zeigen dir und deinem Arzt, was du eingetragen hast“, „Deine Einnahmen auf
+  einen Blick“, „Offene und ausgelassene Einnahmen erkennen“, „Deine Medikamente organisiert –
+  an einem Ort“, „Erinnerungen zur eingestellten Uhrzeit“, CTA „Behalte deine Medikamente im
+  Blick.“ / „Starte kostenlos mit Dosena – ganz ohne Konto.“
+- FAQ „Wo werden meine Daten gespeichert?“: „können … enthalten sein“, Verschlüsselungs-Hinweis
+  mit Link auf Datenschutzerklärung Abschnitt 7, Hinweis auf Kopien in Gerätesicherungen.
+- `styles.css`: Links in FAQ-Antworten sichtbar (Teal, unterstrichen).
+
+Branch `fix/compliance-index-texte` setzt auf `docs/datenschutz-hosting-kontakt` (PR #5, auf
+PR #4) auf. Mit PR #3 (`fix/gratis-report-texte`) ist im FAQ-Block ein Konflikt zu erwarten
+(benachbarte Zeilen), wie schon zwischen PR #3 und PR #4.
+
+Geprüft: compliance-checker (erst Funde K2/K3/E6/E7, dann Nachprüfung: nichts Kritisches oder
+Hohes mehr, mittlere Funde zu „Therapietreue/dranbleiben“ übernommen); Textsuche nach
+„Therapietreue“, „dranzubleiben“, „stabil“, „Trends“, „festen Uhrzeit“ ohne Treffer;
+`<div>`/`<a>` ausgeglichen; Android-Build ohne Tracking-/Crash-SDKs (Gradle-Dateien durchsucht).
+Kein Browser-Rendering-Test.
+Offen (niedrig, compliance-checker): „Dein Gesundheits-Begleiter“, „Smarte Erinnerungen“,
+„Verlauf & Treue“/„Plan, Treue und Werte“ (kollidiert mit PR #3), „Der solide Start in deine
+Therapie“, „Werte-Tracking“ neben „Kein Tracking“, „organisiert und dokumentiert deine
+Therapie“ im Disclaimer, PAngV-Hinweis (inkl. MwSt., Abo-Verlängerung) bei den Preisen;
+iOS-Projekt noch auf Tracking-SDKs prüfen, bevor „0 Tracker“ live geht.
