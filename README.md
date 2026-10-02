@@ -106,4 +106,33 @@ Geprüft: code-reviewer (Querverweise, HTML), compliance-checker. Kein Browser-R
 Offen: Erst mergen, wenn die App-Versionen mit den neuen Texten in den Stores sind.
 Vom compliance-checker zusätzlich angemerkt (nicht Teil dieser Änderung): Hosting- (GitHub
 Pages) und E-Mail-Kontakt-Abschnitt in der Datenschutzerklärung fehlen; „DSGVO-konform“
-als Werbeaussage prüfen.
+als Werbeaussage prüfen. (Erledigt, siehe nächsten Eintrag; die Abschnittsnummern oben
+gelten vor dem Zusammenführen mit PR #2.)
+
+## Änderung 02.10.2026: PR #2 und #4 zusammengeführt, „DSGVO-konform“ entfernt
+
+Grund: PR #2 (Hosting/E-Mail-Kontakt in der Datenschutzerklärung) und PR #4 (System-Backups)
+nummerierten beide die Abschnitte um und kollidierten. „DSGVO-konform“ ist als Werbeaussage
+eine pauschale Selbstzuschreibung ohne Prüfung und daher irreführungsanfällig (UWG).
+
+- Branch `docs/datenschutz-hosting-kontakt` setzt auf PR #4 auf und enthält PR #2 per Merge.
+- `datenschutz.html`: Abschnitt 3 „Diese Website“ (aus PR #2) vor den App-Abschnitten,
+  Datensicherung jetzt Abschnitt 7, Abschnitte 1–14, Querverweise (7, 8) angepasst.
+  Überblick präzisiert: „über die App“ keine personenbezogenen Daten (Support-Mails werden
+  verarbeitet, siehe Abschnitt 3). Rechte-Abschnitt nennt E-Mails, Änderungshinweis nennt
+  Abschnitte 3 und 7.
+- `datenschutz.html` nach compliance-checker: E-Mail-Kontakt mit getrennter Rechtsgrundlage
+  (lit. b bei Abo/App, sonst lit. f), Art. 9 Abs. 2 lit. a für freiwillig gesendete
+  Gesundheitsangaben samt Widerruf (auch in „Deine Rechte“), Anbieter Google Ireland Limited
+  bzw. Google LLC (DPF); Beleglink zum GitHub-IP-Logging; Smart Link: an Apple geht nur der
+  Kampagnenname (`ct`), an Google Play alle UTM-Werte (wie in `app/index.html`).
+- `index.html`: Hero-Badge „DSGVO-konform“ entfernt („Kein Tracking, keine Werbung“ steht
+  dort schon), im Trust-Streifen durch „Kein Tracking, keine Werbung“ ersetzt.
+
+Offen: wie bei PR #4 erst mergen, wenn die App-Versionen mit Backup-Texten in den Stores sind.
+Soll der Hosting-Teil früher live gehen, PR #2 zuerst mergen; dieser Branch enthält die
+Konfliktauflösung bereits. DPF-Einträge von GitHub und Google manuell unter
+dataprivacyframework.gov/list prüfen. Kein Browser-Rendering-Test.
+Rechtlich offen (compliance-checker): ob das Senden einer E-Mail als „ausdrückliche“
+Einwilligung nach Art. 9 genügt; privates Gmail erlaubt keinen AV-Vertrag (Alternative:
+Postfach unter @dosena.de bei einem EU-Anbieter); konkrete Löschfrist für E-Mails festlegen.
