@@ -1,164 +1,33 @@
 # Dosena – Website
 
-Stand: **14.09.2026**. Statische Website im bestehenden Repository
-[dosena-web](https://github.com/cgrube2006-coder/dosena-web), Branch `main`.
-Letzter Website-Code-Commit: `bffafdb` vom 27.08.2026.
-Domain laut `CNAME`: **dosena.de**. Hosting/DNS wurden heute nicht neu geprüft.
+Statische Website für [dosena.de](https://dosena.de), ausgeliefert über GitHub Pages
+aus dem Branch `main`. Domain laut `CNAME`.
 
-## Vorhanden
+## Aufbau
 
 - `index.html`, `styles.css`, `app.js`: Landingpage.
 - `fonts/`: lokal eingebundene Schriften Fraunces und Outfit (variable WOFF2, SIL OFL 1.1).
-  Keine Schriften oder andere Ressourcen von Google Fonts/CDNs einbinden (DSGVO, siehe unten).
-- `datenschutz.html`, `impressum.html`: vorhandene rechtliche Seiten.
-- `app/index.html`: Smart Link für Store-Weiterleitung.
-- `CNAME`: bestehende eigene Domain; nicht bei einem Dokumentationsupdate ersetzen.
-
-Die früheren README-Schritte „neues Repo anlegen“ und „erste Dateien hochladen“
-waren Erstsetup-Anweisungen und sind für dieses bestehende Projekt nicht mehr aktuell.
+  Keine Schriften oder andere Ressourcen von Google Fonts oder CDNs einbinden.
+- `datenschutz.html`, `impressum.html`: rechtliche Seiten.
+- `app/index.html`: Smart Link für die Store-Weiterleitung.
+- `CNAME`: eigene Domain; nicht bei einem Dokumentationsupdate ersetzen.
 
 ## Smart Link
 
-[dosena.de/app](https://dosena.de/app) erkennt im Quellcode Android, iOS/iPadOS oder
-Desktop. Mobil wird der passende Store verwendet, am Desktop bleiben Store-Links wählbar.
+[dosena.de/app](https://dosena.de/app) erkennt Android, iOS/iPadOS oder Desktop.
+Mobil wird der passende Store geöffnet, am Desktop bleiben beide Store-Links wählbar.
 
 - Android: [Google Play, com.dosena.app](https://play.google.com/store/apps/details?id=com.dosena.app).
 - iOS: [App Store, ID 6783053211](https://apps.apple.com/de/app/dosena-tabletten-erinnerung/id6783053211).
 - Übernommene Parameter: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`.
-- Android bündelt UTM-Werte im `referrer`; iOS setzt `ct` aus Kampagne/Quelle und `mt=8`.
+- Android bündelt die UTM-Werte im `referrer`; iOS setzt `ct` aus Kampagne/Quelle und `mt=8`.
 
-Diese Weitergabe beweist **keine vollständige Installations- oder Kaufattribution**.
-Insbesondere unbekannte Quellen in Google Play nicht automatisch Meta zuordnen.
-
-## Übergabe und Pflege
-
-Die App-Quellen liegen separat:
-[Android](https://github.com/cgrube2006-coder/MedizinAppAndroid) und
-[iOS](https://github.com/cgrube2006-coder/MedizinAppIOS).
-
-Gemeinsame Entscheidungen und die datierte Marketing-Auswertung sind im
-[Projektstand](https://github.com/cgrube2006-coder/MedizinAppAndroid/blob/main/docs/projektstand.md)
-und [Marketing-Dokument](https://github.com/cgrube2006-coder/MedizinAppAndroid/blob/main/docs/marketing.md)
-des Android-Repositories dokumentiert. Zugriff auf diese Repositories kann erforderlich sein.
-Keine internen Kontozugangsdaten oder vertraulichen Kampagnendaten in dieses öffentliche Web-Repo kopieren.
-
-## Bei späteren Website-Änderungen
+## Bei Änderungen
 
 - Nur den beauftragten Inhalt ändern; Domain, Rechtstexte und Store-Ziele nicht beiläufig ersetzen.
-- Landingpage mobil/desktop, Store-Links und `/app` mit/ohne UTM prüfen.
+- Landingpage mobil und am Desktop, Store-Links und `/app` mit und ohne UTM prüfen.
 - Vor einer Hosting-Änderung die bestehende Konfiguration in GitHub Pages prüfen.
 - Quellcode-Push und tatsächliches Deployment getrennt verifizieren.
-- README um Änderung, Prüfdatum, Ergebnis und offene Punkte ergänzen.
 
-Diese Pflege ändert nur Dokumentation, keine Website-Funktion und keine Hosting-Einstellung.
-
-## Änderung 01.10.2026: ehrliche Erinnerungstexte
-
-Grund: Eine Compliance-Prüfung fand absolute Aussagen zur Zuverlässigkeit der
-Erinnerungen und einen für iOS unzutreffenden Vollbild-Hinweis.
-
-- `index.html`: Meta-Description, Hero-Lead, Badge „Erinnerungen zur festen Uhrzeit“,
-  Funktions- und Schritttexte ohne „zuverlässig“/„pünktlich“, Vollbild als Android-Funktion
-  gekennzeichnet, FAQ „Wie verlässlich sind die Erinnerungen?“ mit Voraussetzungen.
-- `datenschutz.html`: exakte Alarme als Android-Berechtigung gekennzeichnet.
-- `impressum.html`: Funktionshinweis zur Zustellung im Haftungshinweis.
-
-Geprüft: Textsuche nach „zuverlässig“, „nie wieder“, „jede Einnahme“, „Vollbild“,
-„pünktlich“ (nur noch der gekennzeichnete Android-Vollbild-Satz). Kein JSON-LD/FAQPage-
-Schema und keine og:/twitter:-Tags vorhanden. Kein Browser-Rendering-Test.
-Offen: Merge des PRs und Kontrolle des GitHub-Pages-Deployments.
-
-## Änderung 01.10.2026: lokale Schriften, Datenschutz für die Website
-
-Grund: `styles.css` lud Fraunces/Outfit per `@import` von fonts.googleapis.com; dabei geht die
-IP-Adresse der Besucher ohne Einwilligung an Google (LG München I, 20.01.2022, 3 O 17493/20).
-Die Datenschutzerklärung beschrieb nur die App, nicht die Website.
-
-- `fonts/`: variable WOFF2 (Fraunces opsz 9–144/wght 400–700, Outfit wght 300–700; je latin und
-  latin-ext) von Google Fonts heruntergeladen, dazu die OFL-Lizenztexte.
-- `styles.css`: Google-Import durch `@font-face` mit `font-display: swap` ersetzt; Abstand
-  zwischen aufeinanderfolgenden Absätzen in `.legal-card`.
-- `datenschutz.html`: neuer Abschnitt 3 „Diese Website“ (GitHub Pages/Server-Logs, DPF,
-  keine Cookies/Tracker, lokale Schriften, Smart Link inkl. UTM-Weitergabe, E-Mail-Kontakt),
-  Widerspruchsrecht nach Art. 21, BayLDA, Abschnitte neu nummeriert (4–13), Stand Oktober 2026.
-
-Geprüft (lokal, `python -m http.server`): index, datenschutz, impressum-Stil, `/app/` laden nur
-eigene Dateien plus eine Inline-`data:`-SVG; `fraunces-latin.woff2`/`outfit-latin.woff2` mit
-Status 200, `document.fonts` „loaded“; Gewichts- und opsz-Achsen wirken (Laufweiten ändern sich).
-Faktenaussagen zu GitHub (IP-Logging, Adresse, DPF) vom compliance-checker gegen die GitHub-Doku geprüft.
-Offen: Merge des PRs, Kontrolle des Pages-Deployments live (Network-Tab ohne Google-Request),
-DPF-Eintrag von GitHub einmal manuell unter dataprivacyframework.gov/list prüfen.
-Hinweis: `.hero h1 .accent` ist wie zuvor synthetisches Kursiv (Google lieferte auch kein Italic).
-
-## Änderung 02.10.2026: System-Backups offengelegt
-
-Grund: Android- und iOS-App lassen die Datensicherung des Betriebssystems (Google-Sicherung,
-iCloud-/Computer-Backup) zu. Die Website versprach „100 % lokal“ und erwähnte Backups nicht.
-
-- `datenschutz.html`: neuer Abschnitt 6 „Datensicherung durch dein Betriebssystem“
-  (Verschlüsselung, Gerätewechsel, Rolle Google/Apple), Abschnitte 2, 3 und
-  „Speicherdauer & Löschung“ angepasst, folgende Abschnitte umnummeriert (jetzt 1–13),
-  Änderungshinweis, Stand Oktober 2026.
-- `index.html`: Meta-Description, Badges („Kein Konto, kein Dosena-Server“,
-  „Ohne Konto, ohne Dosena-Server“), Preisliste „Export & Wiederherstellung (Datei)“, FAQ.
-
-Geprüft: code-reviewer (Querverweise, HTML), compliance-checker. Kein Browser-Rendering-Test.
-Offen: Erst mergen, wenn die App-Versionen mit den neuen Texten in den Stores sind.
-Vom compliance-checker zusätzlich angemerkt (nicht Teil dieser Änderung): Hosting- (GitHub
-Pages) und E-Mail-Kontakt-Abschnitt in der Datenschutzerklärung fehlen; „DSGVO-konform“
-als Werbeaussage prüfen. (Erledigt, siehe nächsten Eintrag; die Abschnittsnummern oben
-gelten vor dem Zusammenführen mit PR #2.)
-
-## Änderung 02.10.2026: PR #2 und #4 zusammengeführt, „DSGVO-konform“ entfernt
-
-Grund: PR #2 (Hosting/E-Mail-Kontakt in der Datenschutzerklärung) und PR #4 (System-Backups)
-nummerierten beide die Abschnitte um und kollidierten. „DSGVO-konform“ ist als Werbeaussage
-eine pauschale Selbstzuschreibung ohne Prüfung und daher irreführungsanfällig (UWG).
-
-- Branch `docs/datenschutz-hosting-kontakt` setzt auf PR #4 auf und enthält PR #2 per Merge.
-- `datenschutz.html`: Abschnitt 3 „Diese Website“ (aus PR #2) vor den App-Abschnitten,
-  Datensicherung jetzt Abschnitt 7, Abschnitte 1–14, Querverweise (7, 8) angepasst.
-  Überblick präzisiert: „über die App“ keine personenbezogenen Daten (Support-Mails werden
-  verarbeitet, siehe Abschnitt 3). Rechte-Abschnitt nennt E-Mails, Änderungshinweis nennt
-  Abschnitte 3 und 7.
-- `datenschutz.html` nach compliance-checker: E-Mail-Kontakt mit getrennter Rechtsgrundlage
-  (lit. b bei Abo/App, sonst lit. f), Art. 9 Abs. 2 lit. a für freiwillig gesendete
-  Gesundheitsangaben samt Widerruf (auch in „Deine Rechte“), Anbieter Google Ireland Limited
-  bzw. Google LLC (DPF); Beleglink zum GitHub-IP-Logging; Smart Link: an Apple geht nur der
-  Kampagnenname (`ct`), an Google Play alle UTM-Werte (wie in `app/index.html`).
-- `datenschutz.html` Abschnitt 8 heißt jetzt „App-Stores: Abonnement und Bewertungen“ und
-  nennt den Bewertungsdialog (Android Play In-App Review, iOS `requestReview`) sowie die lokale
-  Abo-Statusprüfung über Play Billing/StoreKit (lit. b); vom compliance-checker gegen den Code geprüft.
-- `index.html`: Hero-Badge „DSGVO-konform“ entfernt („Kein Tracking, keine Werbung“ steht
-  dort schon), im Trust-Streifen durch „Kein Tracking, keine Werbung“ ersetzt.
-
-Offen: wie bei PR #4 erst mergen, wenn die App-Versionen mit Backup-Texten in den Stores sind.
-Soll der Hosting-Teil früher live gehen, PR #2 zuerst mergen; dieser Branch enthält die
-Konfliktauflösung bereits. DPF-Einträge von GitHub und Google manuell unter
-dataprivacyframework.gov/list prüfen. Kein Browser-Rendering-Test.
-Rechtlich offen (compliance-checker): ob das Senden einer E-Mail als „ausdrückliche“
-Einwilligung nach Art. 9 genügt; privates Gmail erlaubt keinen AV-Vertrag (Alternative:
-Postfach unter @dosena.de bei einem EU-Anbieter); konkrete Löschfrist für E-Mails festlegen.
-
-## Änderung 02.10.2026: Store-Bewertung und Kauf-Schnittstelle offengelegt
-
-Branch `docs/store-bewertung-datenschutz`, aufgesetzt auf `docs/backup-offenlegung` (PR #4).
-Grund: Beide Apps zeigen den System-Bewertungsdialog; die Android-Kauf-Bibliothek von Google
-(Play Billing Library) übermittelt technische Protokolldaten an Google.
-
-- `datenschutz.html`: neuer Abschnitt 8 „Bewertung im Store“ (inkl. Rechtsgrundlage),
-  Abschnitt 7 um Play Billing Library ergänzt, Abschnitte 2, 9 („Keine Analyse“ mit
-  Billing-Ausnahme) und 10 (Internetzugriff) präzisiert, umnummeriert auf 1–14,
-  Änderungshinweis.
-
-Geprüft: code-reviewer (Querverweise), compliance-checker. Kein Browser-Rendering-Test.
-Offen: Werbeaussagen „Kein Tracking“ in `index.html` prüfen; Drittlandhinweis (USA) für
-Google/Apple ggf. ergänzen.
-Beim Zusammenführen mit main (PR #2, #4, #5) am 02.10.2026: Abschnitt 8 „App-Stores:
-Abonnement und Bewertungen“ wieder aufgeteilt in 8 „Abonnement (Käufe)“ (Abo-Statusprüfung
-mit lit. b aus PR #5 plus Play Billing Library aus diesem Branch) und 9 „Bewertung im Store“;
-Website-Abschnitt 3 bleibt, damit jetzt Abschnitte 1–15, Querverweise auf 8 angepasst.
-Nach compliance-checker: Abschnitt 10 sagt nicht mehr „werten deine Nutzung nicht aus“
-(Widerspruch zur lokalen Bewertungslogik), sondern verweist auf Abschnitt 9; Linkliste in
-Abschnitt 8 nennt die Abschnitte 3, 7 und 9. Offen: Überblick (Abschnitt 2) erwähnt nicht,
-dass wir Store-Bewertungen in der Entwicklerkonsole sehen.
+Dieses Repository ist öffentlich. Das Änderungsprotokoll mit Prüfergebnissen und offenen
+Punkten wird im (privaten) App-Repository geführt.

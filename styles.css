@@ -339,6 +339,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .faq summary .pl::after { width: 2px; height: 16px; top: 3px; left: 10px; transition: transform .3s; }
 .faq details[open] summary .pl::after { transform: rotate(90deg); opacity: 0; }
 .faq details p { padding: 0 0 20px; color: var(--ink-soft); }
+.faq details p a { color: var(--teal-700); text-decoration: underline; text-underline-offset: 2px; }
 
 /* CTA band */
 .cta-band { position: relative; overflow: hidden; border-radius: var(--radius-l); padding: 70px 40px; text-align: center;
