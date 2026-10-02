@@ -66,6 +66,21 @@ Geprüft: Textsuche nach „zuverlässig“, „nie wieder“, „jede Einnahme�
 Schema und keine og:/twitter:-Tags vorhanden. Kein Browser-Rendering-Test.
 Offen: Merge des PRs und Kontrolle des GitHub-Pages-Deployments.
 
+## Änderung 02.10.2026: Store-Bewertung und Kauf-Schnittstelle offengelegt
+
+Branch `docs/store-bewertung-datenschutz`, aufgesetzt auf `docs/backup-offenlegung` (PR #4).
+Grund: Beide Apps zeigen den System-Bewertungsdialog; die Android-Kauf-Bibliothek von Google
+(Play Billing Library) übermittelt technische Protokolldaten an Google.
+
+- `datenschutz.html`: neuer Abschnitt 8 „Bewertung im Store“ (inkl. Rechtsgrundlage),
+  Abschnitt 7 um Play Billing Library ergänzt, Abschnitte 2, 9 („Keine Analyse“ mit
+  Billing-Ausnahme) und 10 (Internetzugriff) präzisiert, umnummeriert auf 1–14,
+  Änderungshinweis.
+
+Geprüft: code-reviewer (Querverweise), compliance-checker. Kein Browser-Rendering-Test.
+Offen: Werbeaussagen „Kein Tracking“ in `index.html` prüfen; Drittlandhinweis (USA) für
+Google/Apple ggf. ergänzen.
+
 ## Änderung 02.10.2026: System-Backups offengelegt
 
 Grund: Android- und iOS-App lassen die Datensicherung des Betriebssystems (Google-Sicherung,
