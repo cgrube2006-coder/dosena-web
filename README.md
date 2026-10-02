@@ -126,6 +126,8 @@ eine pauschale Selbstzuschreibung ohne Prüfung und daher irreführungsanfällig
   Gesundheitsangaben samt Widerruf (auch in „Deine Rechte“), Anbieter Google Ireland Limited
   bzw. Google LLC (DPF); Beleglink zum GitHub-IP-Logging; Smart Link: an Apple geht nur der
   Kampagnenname (`ct`), an Google Play alle UTM-Werte (wie in `app/index.html`).
+- `datenschutz.html` Abschnitt 8 heißt jetzt „App-Stores: Abonnement und Bewertungen“ und
+  nennt den Bewertungsdialog (Android Play In-App Review, iOS `requestReview`).
 - `index.html`: Hero-Badge „DSGVO-konform“ entfernt („Kein Tracking, keine Werbung“ steht
   dort schon), im Trust-Streifen durch „Kein Tracking, keine Werbung“ ersetzt.
 
