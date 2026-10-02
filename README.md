@@ -89,3 +89,21 @@ Faktenaussagen zu GitHub (IP-Logging, Adresse, DPF) vom compliance-checker gegen
 Offen: Merge des PRs, Kontrolle des Pages-Deployments live (Network-Tab ohne Google-Request),
 DPF-Eintrag von GitHub einmal manuell unter dataprivacyframework.gov/list prüfen.
 Hinweis: `.hero h1 .accent` ist wie zuvor synthetisches Kursiv (Google lieferte auch kein Italic).
+
+## Änderung 02.10.2026: System-Backups offengelegt
+
+Grund: Android- und iOS-App lassen die Datensicherung des Betriebssystems (Google-Sicherung,
+iCloud-/Computer-Backup) zu. Die Website versprach „100 % lokal“ und erwähnte Backups nicht.
+
+- `datenschutz.html`: neuer Abschnitt 6 „Datensicherung durch dein Betriebssystem“
+  (Verschlüsselung, Gerätewechsel, Rolle Google/Apple), Abschnitte 2, 3 und
+  „Speicherdauer & Löschung“ angepasst, folgende Abschnitte umnummeriert (jetzt 1–13),
+  Änderungshinweis, Stand Oktober 2026.
+- `index.html`: Meta-Description, Badges („Kein Konto, kein Dosena-Server“,
+  „Ohne Konto, ohne Dosena-Server“), Preisliste „Export & Wiederherstellung (Datei)“, FAQ.
+
+Geprüft: code-reviewer (Querverweise, HTML), compliance-checker. Kein Browser-Rendering-Test.
+Offen: Erst mergen, wenn die App-Versionen mit den neuen Texten in den Stores sind.
+Vom compliance-checker zusätzlich angemerkt (nicht Teil dieser Änderung): Hosting- (GitHub
+Pages) und E-Mail-Kontakt-Abschnitt in der Datenschutzerklärung fehlen; „DSGVO-konform“
+als Werbeaussage prüfen.
