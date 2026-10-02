@@ -139,3 +139,26 @@ dataprivacyframework.gov/list prüfen. Kein Browser-Rendering-Test.
 Rechtlich offen (compliance-checker): ob das Senden einer E-Mail als „ausdrückliche“
 Einwilligung nach Art. 9 genügt; privates Gmail erlaubt keinen AV-Vertrag (Alternative:
 Postfach unter @dosena.de bei einem EU-Anbieter); konkrete Löschfrist für E-Mails festlegen.
+
+## Änderung 02.10.2026: Store-Bewertung und Kauf-Schnittstelle offengelegt
+
+Branch `docs/store-bewertung-datenschutz`, aufgesetzt auf `docs/backup-offenlegung` (PR #4).
+Grund: Beide Apps zeigen den System-Bewertungsdialog; die Android-Kauf-Bibliothek von Google
+(Play Billing Library) übermittelt technische Protokolldaten an Google.
+
+- `datenschutz.html`: neuer Abschnitt 8 „Bewertung im Store“ (inkl. Rechtsgrundlage),
+  Abschnitt 7 um Play Billing Library ergänzt, Abschnitte 2, 9 („Keine Analyse“ mit
+  Billing-Ausnahme) und 10 (Internetzugriff) präzisiert, umnummeriert auf 1–14,
+  Änderungshinweis.
+
+Geprüft: code-reviewer (Querverweise), compliance-checker. Kein Browser-Rendering-Test.
+Offen: Werbeaussagen „Kein Tracking“ in `index.html` prüfen; Drittlandhinweis (USA) für
+Google/Apple ggf. ergänzen.
+Beim Zusammenführen mit main (PR #2, #4, #5) am 02.10.2026: Abschnitt 8 „App-Stores:
+Abonnement und Bewertungen“ wieder aufgeteilt in 8 „Abonnement (Käufe)“ (Abo-Statusprüfung
+mit lit. b aus PR #5 plus Play Billing Library aus diesem Branch) und 9 „Bewertung im Store“;
+Website-Abschnitt 3 bleibt, damit jetzt Abschnitte 1–15, Querverweise auf 8 angepasst.
+Nach compliance-checker: Abschnitt 10 sagt nicht mehr „werten deine Nutzung nicht aus“
+(Widerspruch zur lokalen Bewertungslogik), sondern verweist auf Abschnitt 9; Linkliste in
+Abschnitt 8 nennt die Abschnitte 3, 7 und 9. Offen: Überblick (Abschnitt 2) erwähnt nicht,
+dass wir Store-Bewertungen in der Entwicklerkonsole sehen.
