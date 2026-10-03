@@ -10,6 +10,8 @@ aus dem Branch `main`. Domain laut `CNAME`.
   Keine Schriften oder andere Ressourcen von Google Fonts oder CDNs einbinden.
 - `datenschutz.html`, `impressum.html`: rechtliche Seiten.
 - `app/index.html`: Smart Link für die Store-Weiterleitung.
+- `media/social/`: Grafiken und Videos für Social-Media-Beiträge (nicht verlinkt, per `robots.txt` von der Indexierung ausgenommen).
+- `robots.txt`: schließt `/media/` von Suchmaschinen aus.
 - `CNAME`: eigene Domain; nicht bei einem Dokumentationsupdate ersetzen.
 
 ## Smart Link
